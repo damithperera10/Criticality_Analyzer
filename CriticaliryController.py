@@ -22,7 +22,7 @@ words_without_stopwords = [word for word in CleanData if not word in stopwords_s
 result = loadModal.classify(extract_features(words_without_stopwords))
 
 newDataFromResult = [{newData, result}]
-newDataFile = open('newData.csv', 'w')
+newDataFile = open('newData.csv', 'a')
 with newDataFile:
     writer = csv.writer(newDataFile)
     writer.writerows(newDataFromResult)
